@@ -41,3 +41,7 @@
 ```
 /neat --full
 ```
+
+## 安装方式
+1. clone/unzip 到本地 skills 目录下
+2. 复制该仓库网址，让 agent 安装。
