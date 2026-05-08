@@ -45,3 +45,15 @@
 ## 安装方式
 1. clone/unzip 到本地 skills 目录下
 2. 复制该仓库网址，让 agent 安装。
+
+
+## 致谢
+
+本项目基于 [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) 中的 `neat-freak` 优化：
+
+基于原版，新增：
+- 收窄触发条件，降低泛化“整理/总结”类请求的误触发（洁癖）
+- 增加 `dry-run` / `light` / `full` 三种执行模式
+- 加强 Git 安全检查，避免覆盖用户未提交改动
+- 增加学习笔记边界，防止项目文档被写成个人学习记录或扣细节日记
+- 增加文档真实性校验，要求命令、路由、环境变量、路径等能从代码或配置中验证
