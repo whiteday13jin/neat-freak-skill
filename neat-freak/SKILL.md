@@ -1,24 +1,6 @@
 ---
 name: neat-freak
-description: >
-  End-of-session project knowledge synchronization — reconciles project docs
-  (CLAUDE.md, AGENTS.md, README.md, docs/) and agent memory against the code
-  after a real development milestone. 会话阶段收尾时同步项目文档、项目记忆与代码事实。
-
-  MUST trigger when the user explicitly asks to synchronize project knowledge,
-  docs, handoff notes, or agent memory after development work, using phrases like:
-  "/neat", "/sync", "sync docs", "sync project memory", "update project docs",
-  "prepare handoff", "tidy up docs", "clean up docs", "同步文档", "同步项目记忆",
-  "更新项目文档", "更新项目记忆", "收尾同步", "整理项目文档", "准备交接",
-  "这个阶段做完了，同步一下", "让新人能接手".
-
-  DO NOT trigger for generic requests like "整理一下", "梳理一下", "总结一下",
-  "帮我理清思路", or "tidy this up" unless the user clearly asks to modify
-  project docs, README.md, AGENTS.md, CLAUDE.md, docs/, handoff notes, or agent memory.
-
-  Default mode is light. Use full mode only when the user explicitly asks for
-  full sync, full handoff, cross-project reconciliation, or complete docs cleanup.
-  Cross-platform: works on Claude Code, OpenAI Codex, OpenCode, and OpenClaw.
+description: Sync project docs and agent memory with the current codebase at the end of a development milestone. 会话收尾时同步项目文档、交接信息与代码事实。
 ---
 
 # 洁癖 — Knowledge Base Neat-Freak
@@ -29,6 +11,35 @@ description: >
 ## 模式选择
 
 默认使用 **light mode**，除非用户明确要求完整收尾、跨项目同步、全量审查或交接准备。
+
+## 触发提示
+
+显式触发示例：
+
+- `/neat`
+- `/sync`
+- `sync docs`
+- `sync project memory`
+- `update project docs`
+- `prepare handoff`
+- `同步文档`
+- `同步项目记忆`
+- `更新项目文档`
+- `收尾同步`
+- `整理项目文档`
+- `准备交接`
+- `这个阶段做完了，同步一下`
+- `让新人能接手`
+
+不要因为这类泛化请求就触发：
+
+- `整理一下`
+- `梳理一下`
+- `总结一下`
+- `帮我理清思路`
+- `tidy this up`
+
+只有当用户明确要修改 `README.md`、`AGENTS.md`、`CLAUDE.md`、`docs/`、handoff notes 或 agent memory 时，才把这些泛化表述视作本 skill 的触发信号。
 
 ### dry-run mode：只审查，不修改
 
